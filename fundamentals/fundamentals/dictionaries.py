@@ -38,10 +38,11 @@ students = [
 
 
 def iterateDictionary(some_list):
-    for x in range(0,len(some_list)):
+    for x in range(len(some_list)):
+        string_Name = ""
         for key, val in some_list[x].items():
-            print(f"{key} - {val}", end=", ")
-        print()
+            string_Name += f"{key} - {val}, "
+        print(string_Name[:-2])
 
 
 iterateDictionary(students)
