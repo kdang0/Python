@@ -14,15 +14,15 @@ class User:
         print(self.age)
         print(self.is_rewards_member)
         print(self.gold_card_points)
+        return self
 
     def enroll(self):
         if (self.is_rewards_member == True):
             print("You are already a rewards member!")
-            return False
         else:
             self.is_rewards_member = True
             self.gold_card_points = 200
-            return True
+        return self
 
     def spend_points(self, amount):
         if(self.gold_card_points >= amount):
@@ -30,6 +30,7 @@ class User:
             print("Transaction completed")
         else:
             print("YOU ARE BROKE MAN")
+        return self
 
 
 kevin = User("Kevin", "Dang", "kk@gmail.com", 18)
@@ -39,21 +40,22 @@ people = [kevin, johnny]
 
 
 
+kevin.display_info().enroll().spend_points(50).display_info()
+johnny.enroll().spend_points(80).display_info()
+# kevin.display_info()
+# kevin.enroll()
+# kevin.display_info()
+# kevin.spend_points(50)
+# kevin.display_info()
+# kevin.enroll()
+# kevin.spend_points(150)
+# kevin.spend_points(150)
 
-kevin.display_info()
-kevin.enroll()
-kevin.display_info()
-kevin.spend_points(50)
-kevin.display_info()
-kevin.enroll()
-kevin.spend_points(150)
-kevin.spend_points(150)
 
+# johnny.spend_points(80)
+# johnny.enroll()
 
-johnny.spend_points(80)
-johnny.enroll()
-
-for person in people:
-    print(person)
-    person.display_info()
+# for person in people:
+#     print(person)
+#     person.display_info()
 
