@@ -17,7 +17,10 @@ class Player:
 
     @classmethod
     def get_team(cls, team_list):
-        cls.populate_list(team_list)
+        array = []
+        for player in team_list:
+            array.append(cls(player))
+        return array
 
 
 kevin = {
@@ -55,4 +58,7 @@ for player in players:
     new_team.append(a_player)
 
 print(new_team)
+
+
+print(player_kevin.get_team(players))
 
